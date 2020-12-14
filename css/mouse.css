@@ -1,42 +1,28 @@
 .mouse {
     display: inline-block;
-    width: 160px;
-    height: 240px;
-    border: 15px solid #fff;
-    border-radius: 80px;
+    width: 24px;
+    height: 34px;
+    border: 3px solid #fff;
+    border-radius: 12px;
 }
     .mouse > .wheel {
         display: inline-block;
-        width: 60px;
-        height: 60px;
+        width: 4px;
+        height: 8px;
         background-color: #fff;
-        margin-top: 40px;
-        border-radius: 8px;
+        margin-top: 6px;
+        border-radius: 2px;
         animation-name: scrolling;
-        animation-duration: 1s;
+        animation-duration: 1.2s;
         animation-iteration-count: infinite;
-        background-image: url(../img/5560-Mouse-grey.jpeg);
-        background-size: contain;
     }
-        .mouse > .wheel:hover {
-            animation-play-state: paused;
-        }
-
 @keyframes scrolling {
     0% {
-        margin-top: 20px;
+        margin-top: 4px;
         background-color: #ffff;
-        opacity: 1;
-        transform: rotate(0);
-    }
-    50% {
-        background-color: #ffff;
-        opacity: 1;
     }
     100% {
-        margin-top: 120px;
+        margin-top: 16px;
         background-color: #fff0;
-        opacity: 0;
-        transform: rotate(720deg);
     }
 }
