@@ -19,7 +19,6 @@ function renderProgressBar(selector, data) {
     // randame vieta, kur reikes padeti turini
     const DOM = document.querySelector(selector);
     DOM.innerHTML += HTML;
-
 }
 
 export { renderProgressBar }
