@@ -1,4 +1,5 @@
 import { isValidInput } from './isValidInput.js';
+import { isValidProgressBar } from './isValidProgressBar.js';
 
 function renderProgressBar(selector, data) {
     // input validation
@@ -6,10 +7,20 @@ function renderProgressBar(selector, data) {
         return false;
     }
 
+    // randame vieta, kur reikes padeti turini
+    const DOM = document.querySelector(selector);
+    if (!DOM) {
+        return false;
+    }
+
     // generuojame turini
     let HTML = '';
     for (let i = 0; i < data.length; i++) {
         const bar = data[i];
+        if (!isValidProgressBar(bar)) {
+            continue;
+        }
+
         HTML += `<div class="progress-bar">
                     <div class="top">
                         <div class="label">${bar.title}</div>
@@ -23,9 +34,13 @@ function renderProgressBar(selector, data) {
                 </div>`;
     }
 
-    // randame vieta, kur reikes padeti turini
-    const DOM = document.querySelector(selector);
+    // post logic validation
+    if (HTML === '') {
+        return false;
+    }
+
     DOM.innerHTML += HTML;
+    return true;
 }
 
 export { renderProgressBar }
